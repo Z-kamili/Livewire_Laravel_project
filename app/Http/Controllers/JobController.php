@@ -18,4 +18,12 @@ class JobController extends Controller
         ]);
 
     }
+
+    public function show(Job $id){
+
+return view('jobs.show',['job'=>$id]);
+
+
+
+    }
 }
