@@ -12,6 +12,7 @@
     <body>
       <div class="container mx-auto">
         @include('partials.navbar')
+        <livewire:flash/>
          @yield('content')
       </div>
      

@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('content')
 <h1 class="text-3xl text-green-500 mb-3">{{$job->title}}</h1>
-
-
 <div class="px-3 py-5 mb-3 shadow-sm hover:shadow-md duration-200 rounded border-2 border-gray-300">
     <p class="text-md text-gray-800"> {{$job->description}}</p>
     <div class="flex items-center">

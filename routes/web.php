@@ -18,8 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/jobs',[JobController::class,'index'])->name('jobs.index'); 
-Route::get('/jobs/{id}',[JobController::class,'show'])->name('jobs.show'); 
+Route::get('/jobs',[JobController::class,'index'])->middleware('auth')->name('jobs.index');
+Route::get('/jobs/{id}',[JobController::class,'show'])->middleware('auth')->name('jobs.show');
    
 Route::get('/home',function(){
     return view('home');
