@@ -36,4 +36,11 @@ public function isLiked(){
 
  }
 
+
+ public function proposals(){
+
+    return $this->hasMany('App\Models\Proposal');
+
+}
+
 }

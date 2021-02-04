@@ -11,6 +11,16 @@
 
 </div>
 
+<section x-data="{open:false}">
+    <a href="#" class="text-green-500" @click="open = true" >
+Cliquez ici pour soumettre une candidature.
+    </a>
+    <form class="w-full max-w-md-20 " x-show="open" method="POST" action="{{route('proposals.store',$job)}}">
+        @csrf
+      <textarea class="p-3 font-thin border-black" name="content"></textarea>
+      <button type="submit" class="block bg-green-700 text-white px-3 py-2">Soumettre ma lettre de motivation</button>
+    </form>
 
+</section>
 
 @endsection
