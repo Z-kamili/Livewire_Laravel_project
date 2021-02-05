@@ -11,6 +11,7 @@
          <a href="{{ route('register') }}" class="mr-5 hover:text-green-500">S'enregistrer</a>
        @else
        <livewire:search/>
+       <a href="{{ route('conversation.index')}}" class="mr-5 hover:text-green-500 text-black">Conversation</a>
        <a href="{{ route('jobs.index')}}" class="mr-5 hover:text-green-500 text-black">Nos Missions </a>
          <a href="{{ route('home') }}" class="mr-5 hover:text-green-500 text-black">Tableau de bord</a>
          <a href="{{ route('logout') }}" class="mr-5 hover:text-green-500 text-black" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Se déconnecter</a>

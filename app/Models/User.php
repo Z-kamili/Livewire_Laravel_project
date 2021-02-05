@@ -63,4 +63,18 @@ class User extends Authenticatable
 
     }
 
-}
+    public function conversations(){
+
+        return Conversation::where(function($q){
+
+            return $q->where('to',$this->id)->orWhere('from',$this->id);
+
+        });
+    }
+        public function getConversationAttribute(){
+
+            return $this->conversations()->get();
+
+        }
+
+    }

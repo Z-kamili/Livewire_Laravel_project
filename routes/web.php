@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Conversation;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProposalController;
 use Illuminate\Support\Facades\Route;
@@ -22,11 +23,12 @@ Route::get('/', function () {
 
 
 Route::group(['middleware'=>['auth']],function(){
-
     Route::post('/submit/{job}',[ProposalController::class,'store'])->name('proposals.store');
     Route::get('/jobs',[JobController::class,'index'])->name('jobs.index');
     Route::get('/jobs/{id}',[JobController::class,'show'])->name('jobs.show');
-     
+    Route::get('/confirmProposal/{proposal}',[ProposalController::class,'confirm'])->name('confirm.proposal');
+    Route::get('/conversations',[Conversation::class,'index'])->name('conversation.index');
+    Route::get('/conversations/{conversation}',[Conversation::class,'show'])->name('conversation.show');
 });
 Route::group(['middleware'=>['auth','proposal']],function(){
 
